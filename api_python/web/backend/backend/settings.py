@@ -80,7 +80,8 @@ DATABASES = {
         'NAME': 'todo',
         'USER': 'root',
         'PASSWORD': 'password',
-        'HOST': '127.0.0.1',
+        # Use service name in docker-compose
+        'HOST': 'database',
         'PORT': '3306'
     }
 }
