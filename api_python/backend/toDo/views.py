@@ -28,6 +28,28 @@ def tasks(request):
         )
         return HttpResponse("Successfully create a task")
 
+    elif request.method == 'DELETE':
+        task_body = loads(request.body)
+        try:
+            task = Task.objects.get(pk=task_body['id'])
+            task.delete()
+            return HttpResponse("Successfully delete task")
+        except Task.DoesNotExist:
+            return HttpResponse("Task id not exsit")
+
+    else:
+        task_body = loads(request.body)
+        try:
+            task = Task.objects.get(pk=task_body['id'])
+            task.name = task_body['name']
+            task.start = task_body['start']
+            task.end = task_body['end']
+            task.description = task_body['description']
+            task.save()
+            return HttpResponse("Successfully edit task")
+        except Task.DoesNotExist:
+            return HttpResponse("Task id not exsit")   
+
 @require_http_methods(['GET', 'POST', 'PUT', 'DELETE'])
 def subtasks(request, taskId):
     if request.method == 'GET':
