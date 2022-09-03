@@ -1,10 +1,7 @@
 import { PlusOutlined } from "@ant-design/icons";
 import styled from "@emotion/styled";
 import { Form, Input } from "antd";
-<<<<<<< HEAD
 import { memo } from "react";
-=======
->>>>>>> dev
 
 const StyledInput = styled.div`
   .ant-input:placeholder-shown {
@@ -37,8 +34,4 @@ function NewTaskAsElementList() {
   );
 }
 
-<<<<<<< HEAD
 export default memo(NewTaskAsElementList);
-=======
-export default NewTaskAsElementList;
->>>>>>> dev

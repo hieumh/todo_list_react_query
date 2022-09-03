@@ -1,4 +1,4 @@
-import { Divider, Empty, Spin } from "antd"
+import { Empty, Spin } from "antd"
 import { useEffect } from "react"
 import { useQuery } from "react-query"
 import AddElement from "../../component/AddElement"
@@ -15,7 +15,7 @@ function MyTaskContent() {
     data: listSubtask,
     refetch,
     isLoading
-  } = useQuery(ALL_SUBTASKS, () => subtaskService.getAllSubTasks(id!), {
+  } = useQuery(ALL_SUBTASKS, () => subtaskService.getAllSubtasksById(id!), {
     enabled: false,
     select: response => {
       if (response?.items) return response.items
