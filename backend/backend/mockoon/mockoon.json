@@ -1,0 +1,85 @@
+{
+  "uuid": "6e15829a-2653-4abf-80ec-edcb8918a175",
+  "lastMigration": 20,
+  "name": "Mockoon",
+  "endpointPrefix": "api/",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "ad833b24-d548-4eac-b673-82d5ab23187d",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "tasks",
+      "responses": [
+        {
+          "uuid": "888a8cff-1734-457a-a62b-6228b3eaf9a2",
+          "body": "{\n  \"items\": [\n    {\n      \"id\": \"1\",\n      \"name\": \"Work all day\", \n      \"start\": \"Tue Jul 26 2022 06:05:43 GMT+0700 (Indochina Time)\",\n      \"end\": \"Tue Jul 26 2022 06:05:43 GMT+0700 (Indochina Time)\",\n      \"description\": \"Work for all day and not rest\"\n    }\n    ],\n  \"meta\": {\n    \"totalItems\": 1,\n    \"page\": 1,\n    \"pageSize\": 10,\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}

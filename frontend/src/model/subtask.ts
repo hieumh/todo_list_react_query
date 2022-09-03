@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { StepModel } from "./step"
 
 export type SubtaskModel = {
@@ -9,3 +10,12 @@ export type SubtaskModel = {
 }
 
 export type SubtaskAsTree = SubtaskModel & { children: StepModel[] }
+=======
+export type SubtaskModel = {
+  id: string;
+  taskId: string;
+  name: string;
+  start: Date;
+  end: Date;
+}
+>>>>>>> dev
