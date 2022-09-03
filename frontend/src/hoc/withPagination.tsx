@@ -4,10 +4,11 @@ function withPagination(Component) {
   const [page, setPage] = useState(1);
 
   return function (props) {
-    return
-    <div>
-      <Component page={page} {...props} />
-    </div>
+    return (
+      <div>
+        <Component page={page} {...props} />
+      </div>
+    )
   }
 }
 

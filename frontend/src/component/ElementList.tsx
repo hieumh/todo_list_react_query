@@ -1,4 +1,5 @@
 import moment from "moment"
+import { memo } from "react"
 
 type ElementListProps = {
   name: string
@@ -22,4 +23,4 @@ function ElementList({ name, start, end }: ElementListProps) {
   )
 }
 
-export default ElementList
+export default memo(ElementList)

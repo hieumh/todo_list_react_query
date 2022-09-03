@@ -1,6 +1,7 @@
 import { PlusOutlined } from "@ant-design/icons"
 import styled from "@emotion/styled"
 import { Form, Input } from "antd"
+import { memo } from "react"
 
 const StyledInput = styled.div`
   .ant-input:placeholder-shown {
@@ -37,4 +38,4 @@ function AddElement() {
   )
 }
 
-export default AddElement
+export default memo(AddElement)
