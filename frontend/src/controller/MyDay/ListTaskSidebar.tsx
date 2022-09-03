@@ -1,28 +1,27 @@
-import { Spin } from "antd";
+import { Spin, Typography } from "antd";
 import { useEffect } from "react";
 import { useQuery } from "react-query";
-import TaskAsElementList from "../../component/Task/TaskAsElementList";
-import { ALL_TASKS } from "../../constant/AppConstant";
+import { ALL_TASKS_AS_TREE } from "../../constant/AppConstant";
 import { taskService } from "../../service/taskService";
+import TaskBox from "./SidebarBox/TaskBox";
 
 function ListTaskSidebar() {
-  const { data: listTask, refetch, isLoading } = useQuery(ALL_TASKS, () => taskService.getAllTasks(), {
+  const { data: tasks, refetch: fetchTasks, isLoading: isLoadingTask } = useQuery(ALL_TASKS_AS_TREE, () => taskService.getAllTasksAsTree(), {
     enabled: false,
-    select: (response) => {
-      if (response?.items) return response.items
-
-      return [];
-    }
   })
 
   useEffect(() => {
-    refetch();
+    fetchTasks();
   }, [])
+  console.log(tasks);
 
-  return isLoading ? <Spin /> : (
+
+  return isLoadingTask ? <Spin /> : (
     <div>
+      <Typography.Title level={3} className="">Task list</Typography.Title>
       {
-        listTask?.map(task => (<TaskAsElementList task={task} key={task.id} />))
+        tasks ? tasks.map(task => <TaskBox task={task} key={task.id} />) : null
+        // listTask?.map(task => (<TaskAsElementList task={task} key={task.id} />))
       }
     </div>
   );

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { memo, ReactNode } from 'react';
 
 type HeaderBarProps = { children: ReactNode }
 
@@ -10,4 +10,4 @@ function HeaderBar({ children }: HeaderBarProps) {
   );
 }
 
-export default HeaderBar;
+export default memo(HeaderBar);

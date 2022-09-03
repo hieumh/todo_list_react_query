@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 type HeaderProps = {
   title: string;
 }
@@ -8,4 +10,4 @@ function Header({ title }: HeaderProps) {
   </div>
 }
 
-export default Header
+export default memo(Header)

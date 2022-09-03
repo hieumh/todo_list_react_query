@@ -2,6 +2,7 @@ import { CaretRightOutlined } from "@ant-design/icons"
 import styled from "@emotion/styled"
 import { Collapse } from "antd"
 import CollapsePanel from "antd/lib/collapse/CollapsePanel"
+import { memo } from "react"
 
 import { TaskModel } from "../../model/task"
 import ElementList from "../ElementList"
@@ -36,4 +37,4 @@ function TaskAsElementList({ task }: TaskAsElementListProps) {
   </StylePanel>
 }
 
-export default TaskAsElementList
+export default memo(TaskAsElementList)

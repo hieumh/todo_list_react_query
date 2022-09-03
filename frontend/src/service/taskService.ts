@@ -1,6 +1,6 @@
 import { todoAxios } from "../config/axiosService"
 import { Paginate } from "../model/pagination"
-import { TaskModel } from "../model/task"
+import { TaskAsTree, TaskModel } from "../model/task"
 
 export const taskService = {
   getAllTasks: (params?: { status: string }) =>
@@ -9,6 +9,14 @@ export const taskService = {
       .then(res => res.data)
       .catch(error => {
         throw error
+      }),
+
+  getAllTasksAsTree: () =>
+    todoAxios
+      .get<TaskAsTree[]>("api/tasks/type/tree")
+      .then(res => res.data)
+      .catch(err => {
+        throw err
       }),
 
   createNewTask: (data: TaskModel) =>

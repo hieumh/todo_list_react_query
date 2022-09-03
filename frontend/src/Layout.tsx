@@ -25,38 +25,20 @@ type LayoutAppProps = {
   children: ReactNode
 }
 
-export default function LayoutApp({ children }: LayoutAppProps) {
-  const items = useMemo<ItemType[]>(
-    () => [
-      {
-        key: "1",
-        icon: <UserOutlined />,
-        label: <Link to="/">My day</Link>
-      },
-      {
-        key: "2",
-        icon: <PlusOutlined />,
-        label: <Link to="/new-task">Add project</Link>
-      },
-      {
-        key: "3",
-        icon: <OrderedListOutlined />,
-        label: <Link to="/list-task">Tasks management</Link>
-      },
-      {
-        key: "4",
-        icon: <CheckSquareOutlined />,
-        label: <Link to="/task">My task</Link>
-      },
-      {
-        key: "5",
-        icon: <HighlightOutlined />,
-        label: <Link to="/statistic">Statistic</Link>
-      }
-    ],
-    []
-  )
+const items = [
+  {
+    key: "1",
+    icon: <UserOutlined />,
+    label: <Link to="/">My day</Link>
+  },
+  {
+    key: "2",
+    icon: <OrderedListOutlined />,
+    label: <Link to="/list-task">Tasks management</Link>
+  }
+]
 
+export default function LayoutApp({ children }: LayoutAppProps) {
   return (
     <Layout className="flex flex-row">
       <Sider className="pl-6 h-screen" theme="light" width={"20%"}>
